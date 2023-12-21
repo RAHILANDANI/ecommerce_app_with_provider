@@ -2,6 +2,8 @@ import 'package:ecommerce_app/provider/login_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../utils/color.dart';
+
 class signin extends StatefulWidget {
   const signin({super.key});
 
@@ -26,13 +28,13 @@ class _signinState extends State<signin> {
               Center(
                 child: Text(
                   "AR Shop",
-                  style: TextStyle(color: Color(0xff10B01C), fontSize: 50),
+                  style: TextStyle(color: Global.color, fontSize: 50),
                 ),
               ),
               Text(
                 "sign in",
-                style: TextStyle(
-                    color: Color(0xff10B01C), fontWeight: FontWeight.w700),
+                style:
+                    TextStyle(color: Global.color, fontWeight: FontWeight.w700),
               ),
               SizedBox(
                 height: 4,
@@ -42,11 +44,11 @@ class _signinState extends State<signin> {
                 style: TextStyle(color: Colors.black54),
               ),
               TextFormField(
-                cursorColor: Color(0xff10B01C),
+                cursorColor: Global.color,
                 decoration: InputDecoration(
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(
-                      color: Color(0xff10B01C),
+                      color: Global.color,
                     ),
                   ),
                 ),
@@ -56,12 +58,12 @@ class _signinState extends State<signin> {
               ),
               if (login.loginModel.islogin == true)
                 TextFormField(
-                  cursorColor: Color(0xff10B01C),
+                  cursorColor: Global.color,
                   decoration: InputDecoration(
                     hintText: "Password",
                     focusedBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
-                        color: Color(0xff10B01C),
+                        color: Global.color,
                       ),
                     ),
                   ),
@@ -72,12 +74,12 @@ class _signinState extends State<signin> {
                   children: [
                     TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, 'signup');
+                        Navigator.pushNamed(context, 'reset');
                       },
                       child: Text(
                         "Forgot Password?",
                         style: TextStyle(
-                          color: Color(0xff10B01C),
+                          color: Global.color,
                         ),
                       ),
                     )
@@ -89,7 +91,7 @@ class _signinState extends State<signin> {
                     child: ElevatedButton(
                       style: ButtonStyle(
                         backgroundColor: MaterialStatePropertyAll(
-                          Color(0xff10B01C),
+                          Global.color,
                         ),
                       ),
                       onPressed: () {
@@ -166,7 +168,7 @@ class _signinState extends State<signin> {
                     child: Text(
                       "Create one",
                       style: TextStyle(
-                        color: Color(0xff10B01C),
+                        color: Global.color,
                       ),
                     ),
                   )
@@ -182,7 +184,7 @@ class _signinState extends State<signin> {
                     child: Text(
                       "< Back",
                       style: TextStyle(
-                        color: Color(0xff10B01C),
+                        color: Global.color,
                       ),
                     ),
                   ),

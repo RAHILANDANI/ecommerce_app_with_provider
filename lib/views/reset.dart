@@ -1,15 +1,17 @@
+import 'package:ecommerce_app/utils/color.dart';
 import 'package:flutter/material.dart';
 
-class signup extends StatefulWidget {
-  const signup({super.key});
+class reset extends StatefulWidget {
+  const reset({super.key});
 
   @override
-  State<signup> createState() => _signupState();
+  State<reset> createState() => _resetState();
 }
 
-class _signupState extends State<signup> {
+class _resetState extends State<reset> {
   @override
   Widget build(BuildContext context) {
+    String username = "";
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.transparent,
@@ -22,7 +24,7 @@ class _signupState extends State<signup> {
             Center(
               child: Text(
                 "AR Shop",
-                style: TextStyle(color: Color(0xff10B01C), fontSize: 50),
+                style: TextStyle(color: Global.color, fontSize: 50),
               ),
             ),
             SizedBox(
@@ -33,14 +35,17 @@ class _signupState extends State<signup> {
               style: TextStyle(color: Colors.black54),
             ),
             TextFormField(
-              cursorColor: Color(0xff10B01C),
+              cursorColor: Global.color,
               decoration: InputDecoration(
                 focusedBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
-                    color: Color(0xff10B01C),
+                    color: Global.color,
                   ),
                 ),
               ),
+              onChanged: (val) {
+                username = val;
+              },
             ),
             Text(
                 "We will send the notification to reset your password through the email"),
@@ -53,10 +58,14 @@ class _signupState extends State<signup> {
                   child: ElevatedButton(
                     style: ButtonStyle(
                       backgroundColor: MaterialStatePropertyAll(
-                        Color(0xff10B01C),
+                        Global.color,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushReplacementNamed(
+                          context, 'resetverification',
+                          arguments: username);
+                    },
                     child: Text(
                       "Reset Password",
                       style: TextStyle(color: Colors.white),
@@ -68,13 +77,12 @@ class _signupState extends State<signup> {
             Center(
               child: TextButton(
                 onPressed: () {
-                  // Navigator.pushReplacementNamed(context, '/');
                   Navigator.pop(context);
                 },
                 child: Text(
                   "<- Back to login",
                   style: TextStyle(
-                    color: Color(0xff10B01C),
+                    color: Global.color,
                   ),
                 ),
               ),

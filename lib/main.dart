@@ -1,6 +1,7 @@
 import 'package:ecommerce_app/provider/login_provider.dart';
+import 'package:ecommerce_app/views/reset_choose_verification_method.dart';
 import 'package:ecommerce_app/views/signin.dart';
-import 'package:ecommerce_app/views/signup.dart';
+import 'package:ecommerce_app/views/reset.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,8 +17,8 @@ void main() {
         initialRoute: '/',
         routes: {
           '/': (context) => signin(),
-          'signup': (context) => signup(),
           'reset': (context) => reset(),
+          'resetverification': (context) => resetverification(),
         },
       ),
     ),
